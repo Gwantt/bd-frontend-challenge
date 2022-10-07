@@ -1,17 +1,24 @@
 import React from "react";
 
-const PersonalInfo = () => {
+const PersonalInfo = ({formData, setFormData}) => {
     return (
         <div>
             <input
                 type='text'
                 placeholder="Address"
+                value={formData.address}
+                onChange={e => setFormData({...formData, address: e.target.value})}
             />
             <input
                 type='text'
                 placeholder="Apartment, Suite, Etc."
+                value={formData.apt}
+                onChange={e => setFormData({...formData, apt: e.target.value})}
             />
-            <select>
+            <select
+                value={formData.country}
+                onChange={e => setFormData({...formData, country: e.target.value})}
+            >
                 <option value='' disabled selected>Country</option>
                 <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
@@ -261,18 +268,26 @@ const PersonalInfo = () => {
             <input
                 type='text'
                 placeholder = 'City'
+                value={formData.city}
+                onChange={e => setFormData({...formData, city: e.target.value})}
             />
             <input
                 type='text'
                 placeholder='Zipcode'
+                value={formData.zipcode}
+                onChange={e => setFormData({...formData, zipcode: e.target.value})}
             />
             <input
                 type='text'
                 placeholder='Company'
+                value={formData.company}
+                onChange={e => setFormData({...formData, company: e.target.value})}
             />
             <input
                 type='tel'
                 placeholder="Phone Number"
+                value={formData.phone}
+                onChange={e => setFormData({...formData, phone: e.target.value})}
             />
         </div>
     )
