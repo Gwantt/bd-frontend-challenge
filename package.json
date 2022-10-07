@@ -1,0 +1,19 @@
+{
+  "name": "@bryt-designs/create-bd-frontend-challenge",
+  "version": "1.0.0",
+  "description": "Starter template for building a multi-step form",
+  "scripts": {
+    "vanilla:start": "npm --prefix ./vanilla-js run dev",
+    "react:start": "npm --prefix ./react-js run dev",
+    "start": "concurrently \"npm run react:start\" \"npm run vanilla:start\""
+  },
+  "author": "Devin Jackson",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BrytDesigns/bd-frontend-challenge"
+  },
+  "dependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
