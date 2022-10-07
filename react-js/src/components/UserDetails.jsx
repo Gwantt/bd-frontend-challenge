@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const UserDetails = ({formData, setFormData}) => {
+
+
     return (
         <div className='flex flex-col'>
             <div className='flex flex-row'>

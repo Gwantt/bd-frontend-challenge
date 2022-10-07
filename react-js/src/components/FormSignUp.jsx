@@ -1,10 +1,10 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import PersonalInfo from "./PersonalInfo"
 import UserDetails from "./UserDetails"
 import Preferences from "./Preferences"
 
 const FormSignUp = () => {
-
+    const [errors, setErrors] = useState([])
     const [step, setStep] = useState(0)
     const [formData, setFormData] = useState({
         firstName: "",
@@ -24,6 +24,41 @@ const FormSignUp = () => {
         shareInfo: false,
         notifPref: ""
     })
+    useEffect(() => {
+        if(step === 1) {
+            const errors = []
+
+            if(!formData.username) {
+                errors.push('please enter username')
+            }
+
+            if(!formData.emailAddress) {
+                errors.push('please enter email address')
+            }
+
+            if(!formData.password) {
+                errors.push('please enter password')
+            }
+
+            if(!formData.confirmPassword) {
+                errors.push('please confirm your password')
+            }
+
+            if(formData.password !== formData.confirmPassword) {
+                errors.push('please make sure your passwords match')
+            }
+            setErrors(errors)
+        }
+
+        if(step === 2) {
+            setErrors([])
+            const errors = []
+
+        }
+
+    }, [formData.username, formData.emailAddress, formData.password, formData.confirmPassword])
+
+
 
     const stepTitle = ['Account', 'Address', 'Preferences']
 
@@ -45,7 +80,10 @@ const FormSignUp = () => {
                     {stepTitle[step]}
                 </h1>
             </div>
-            <div className="form flex flex-col w-50 bg-white">
+            {errors.length && errors.map(error => (
+                <div>{error}</div>
+            )) }
+            <div className="form flex flex-col w-auto bg-white">
                 <div className="progressbar"></div>
                 <div className="container flex flex-col">
                     <div className="body">{pageDisplay()}</div>
@@ -67,7 +105,7 @@ const FormSignUp = () => {
                                 onClick={() => {
                                     setStep((currentPage) => currentPage + 1)
                                 }}
-                                disabled={step === stepTitle.length - 1}
+                                disabled={errors.length}
                             >
                                 Next
                             </button>
