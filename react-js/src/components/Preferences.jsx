@@ -5,12 +5,13 @@ const Preferences = ({formData, setFormData}) => {
         <div>
             <div>
                 <input
+                    className='checked:bg-blue-500'
                     type='checkbox'
                     formData={formData.notification}
                     checked={formData.notification}
                     onChange={e => setFormData({...formData, notification: e.target.checked})}
                 />
-                <label>
+                <label className='font-medium text-gray-500'>
                     Send Notifcations
                 </label>
             </div>
@@ -22,7 +23,7 @@ const Preferences = ({formData, setFormData}) => {
                     checked={formData.shareInfo}
                     onChange={e => setFormData({...formData, shareInfo: e.target.checked})}
                 />
-                <label>
+                <label className='font-medium text-gray-500'>
                     Share Information with related marketer
                 </label>
             </div>
