@@ -24,6 +24,7 @@ const FormSignUp = () => {
         shareInfo: false,
         notifPref: ""
     })
+
     useEffect(() => {
         if(step === 0) {
             setErrors([])
@@ -82,8 +83,6 @@ const FormSignUp = () => {
 
     }, [step, formData.username, formData.emailAddress, formData.password, formData.confirmPassword, formData.address, formData.country, formData.zipcode, formData.notifPref])
 
-
-
     const stepTitle = ['Account', 'Address', 'Preferences']
 
     const pageDisplay = () => {
@@ -105,7 +104,7 @@ const FormSignUp = () => {
                 </h1>
             </div>
             {errors.length > 0 && errors.map((error, idx) => (
-                <div key={idx}>{error}</div>
+                <div key={idx} className='font-medium text-red-500'>{error}</div>
             )) }
             <div className="form flex flex-col w-auto bg-white">
                 <div className="progressbar"></div>
