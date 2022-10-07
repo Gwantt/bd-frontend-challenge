@@ -32,9 +32,10 @@ const Preferences = ({formData, setFormData}) => {
                 <select
                     value={formData.notifPref}
                     onChange={e => {
+                        console.log(e.target.value)
                         setFormData({...formData, notifPref: e.target.value})}}
                 >
-                    <option disabled>Dropdown: Email or Text</option>
+                    <option value='' disabled defaultValue>Dropdown: Email or Text*</option>
                     <option>Email</option>
                     <option>Text</option>
                 </select>

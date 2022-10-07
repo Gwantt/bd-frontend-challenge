@@ -25,7 +25,8 @@ const FormSignUp = () => {
         notifPref: ""
     })
     useEffect(() => {
-        if(step === 1) {
+        if(step === 0) {
+            setErrors([])
             const errors = []
 
             if(!formData.username) {
@@ -50,13 +51,36 @@ const FormSignUp = () => {
             setErrors(errors)
         }
 
+        if(step === 1) {
+            setErrors([])
+            const errors = []
+
+            if(!formData.address) {
+                errors.push('please enter your address')
+            }
+
+            if(!formData.country) {
+                errors.push('please select a country')
+            }
+
+            if(!formData.zipcode) {
+                errors.push('please enter your zipcode')
+            }
+            setErrors(errors)
+        }
+
         if(step === 2) {
             setErrors([])
             const errors = []
 
+            if(!formData.notifPref) {
+                errors.push('Please select preferred form of contact')
+            }
+
+            setErrors(errors)
         }
 
-    }, [formData.username, formData.emailAddress, formData.password, formData.confirmPassword])
+    }, [step, formData.username, formData.emailAddress, formData.password, formData.confirmPassword, formData.address, formData.country, formData.zipcode, formData.notifPref])
 
 
 
@@ -80,8 +104,8 @@ const FormSignUp = () => {
                     {stepTitle[step]}
                 </h1>
             </div>
-            {errors.length && errors.map(error => (
-                <div>{error}</div>
+            {errors.length > 0 && errors.map((error, idx) => (
+                <div key={idx}>{error}</div>
             )) }
             <div className="form flex flex-col w-auto bg-white">
                 <div className="progressbar"></div>
@@ -110,7 +134,9 @@ const FormSignUp = () => {
                                 Next
                             </button>
                         ) : (
-                            <button className='btn bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded' onClick={() => console.log(JSON.stringify(formData))} type='submit'>
+                            <button className='btn bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded' disabled={errors.length} onClick={() => {
+                                alert('You have successfully registered!')
+                                console.log(JSON.stringify(formData))}} type='submit'>
                                 Register!
                             </button>
                         )

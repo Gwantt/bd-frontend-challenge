@@ -5,7 +5,7 @@ const PersonalInfo = ({ formData, setFormData }) => {
         <div className='flex flex-col w-60 bg-white'>
             <div className='flex flex-row'>
                 <div className='flex flex-col'>
-                    <label className='font-medium text-xs'>Address</label>
+                    <label className='font-medium text-xs'>Address*</label>
                     <input
                         className='bg-gray-300'
                         type='text'
@@ -27,14 +27,14 @@ const PersonalInfo = ({ formData, setFormData }) => {
             </div>
             <div className='flex flex-row pt-5'>
                 <div className='flex flex-col'>
-                    <label className='font-medium text-xs'>Country</label>
+                    <label className='font-medium text-xs'>Country*</label>
                     <select
 
                         className='w-40 font-medium bg-gray-300'
                         value={formData.country}
                         onChange={e => setFormData({ ...formData, country: e.target.value })}
                     >
-                        <option value='' disabled selected>Dropdown</option>
+                        <option value='' disabled defaultValue>Dropdown</option>
                         <option value="Afghanistan">Afghanistan</option>
                         <option value="Åland Islands">Åland Islands</option>
                         <option value="Albania">Albania</option>
@@ -283,7 +283,7 @@ const PersonalInfo = ({ formData, setFormData }) => {
 
                 </div>
                 <div className='flex flex-col'>
-                    <label className='font-medium text-xs'>City</label>
+                    <label className='font-medium text-xs'>City*</label>
                     <input
                         className='bg-gray-300'
                         type='text'
@@ -293,7 +293,7 @@ const PersonalInfo = ({ formData, setFormData }) => {
                     />
                 </div>
                 <div className='flex flex-col'>
-                    <label className='text-xs font-medium'>Zipcode</label>
+                    <label className='text-xs font-medium'>Zipcode*</label>
                     <input
                         className='bg-gray-300'
                         type='text'

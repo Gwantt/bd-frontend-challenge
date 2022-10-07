@@ -27,7 +27,7 @@ const UserDetails = ({formData, setFormData}) => {
                     </div>
             </div>
             <div className='flex flex-col pb-5'>
-                <label className='text-xs font-medium'>Username</label>
+                <label className='text-xs font-medium'>Username*</label>
                 <input
                     type='text'
                     placeholder='Username'
@@ -36,7 +36,7 @@ const UserDetails = ({formData, setFormData}) => {
                 />
             </div>
             <div className='flex flex-col pb-5'>
-                <label className='text-xs font-medium'>Email Address</label>
+                <label className='text-xs font-medium'>Email Address*</label>
                 <input
                     type='text'
                     placeholder='Email Address'
@@ -47,7 +47,7 @@ const UserDetails = ({formData, setFormData}) => {
             <div className="flex flex-row pb-5">
                 <div className='flex flex-col'>
 
-                    <label className='text-xs font-medium'>Password</label>
+                    <label className='text-xs font-medium'>Password*</label>
                     <input
                         type='password'
                         placeholder='Password'
@@ -57,7 +57,7 @@ const UserDetails = ({formData, setFormData}) => {
                     />
                 </div>
                 <div className='flex flex-col'>
-                    <label className='text-xs font-medium'>Confirm Password</label>
+                    <label className='text-xs font-medium'>Confirm Password*</label>
                     <input
                         type='password'
                         placeholder='Confirm Password'
