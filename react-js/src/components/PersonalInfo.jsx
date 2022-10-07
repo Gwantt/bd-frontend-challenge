@@ -2,12 +2,12 @@ import React from "react";
 
 const PersonalInfo = ({ formData, setFormData }) => {
     return (
-        <div className='flex flex-col w-60 bg-white'>
+        <div className='flex flex-col w-90 bg-white'>
             <div className='flex flex-row'>
                 <div className='flex flex-col'>
                     <label className='font-medium text-xs'>Address*</label>
                     <input
-                        className='bg-gray-300'
+                        className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5 box-border'
                         type='text'
                         placeholder="Address"
                         value={formData.address}
@@ -15,9 +15,9 @@ const PersonalInfo = ({ formData, setFormData }) => {
                     />
                 </div>
                 <div className='flex flex-col'>
-                    <label className='font-medium text-xs'>Apartment, Suite, Etc.</label>
+                    <label className='font-medium ml-1 text-xs'>Apartment, Suite, Etc.</label>
                     <input
-                        className='bg-gray-300'
+                        className='bg-gray-200 ml-2 text-gray-900 text-sm block w-full p-2.5 box-border'
                         type='text'
                         placeholder="Apartment, Suite, Etc."
                         value={formData.apt}
@@ -30,7 +30,7 @@ const PersonalInfo = ({ formData, setFormData }) => {
                     <label className='font-medium text-xs'>Country*</label>
                     <select
 
-                        className='w-40 font-medium bg-gray-300'
+                        className='w-20 mr-2 bg-gray-200 text-gray-900 text-sm block w-full p-2.5 box-border'
                         value={formData.country}
                         onChange={e => setFormData({ ...formData, country: e.target.value })}
                     >
@@ -285,7 +285,7 @@ const PersonalInfo = ({ formData, setFormData }) => {
                 <div className='flex flex-col'>
                     <label className='font-medium text-xs'>City*</label>
                     <input
-                        className='bg-gray-300'
+                        className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5 '
                         type='text'
                         placeholder='City'
                         value={formData.city}
@@ -295,7 +295,7 @@ const PersonalInfo = ({ formData, setFormData }) => {
                 <div className='flex flex-col'>
                     <label className='text-xs font-medium'>Zipcode*</label>
                     <input
-                        className='bg-gray-300'
+                        className='bg-gray-200 ml-2 text-gray-900 text-sm block w-full p-2.5 '
                         type='text'
                         placeholder='Zipcode'
                         value={formData.zipcode}
@@ -306,7 +306,7 @@ const PersonalInfo = ({ formData, setFormData }) => {
             <div className='flex flex-col pt-5'>
                 <label className='font-medium text-xs'>Company</label>
                 <input
-                    className='bg-gray-300'
+                    className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5 '
                     type='text'
                     placeholder='Company'
                     value={formData.company}
@@ -316,7 +316,7 @@ const PersonalInfo = ({ formData, setFormData }) => {
             <div className='flex flex-col pt-5'>
                 <label className='font-medium text-xs'>Phone Number</label>
                 <input
-                    className='bg-gray-300'
+                    className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5 '
                     type='tel'
                     placeholder="Phone Number"
                     value={formData.phone}

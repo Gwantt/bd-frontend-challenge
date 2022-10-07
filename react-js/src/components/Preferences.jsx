@@ -30,6 +30,7 @@ const Preferences = ({formData, setFormData}) => {
 
             <div>
                 <select
+                    className='bg-gray-200 ml-2 text-gray-900 text-sm block w-full p-2.5 box-border'
                     value={formData.notifPref}
                     onChange={e => {
                         console.log(e.target.value)

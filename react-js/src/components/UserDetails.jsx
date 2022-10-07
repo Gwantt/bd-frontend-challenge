@@ -4,13 +4,13 @@ const UserDetails = ({formData, setFormData}) => {
 
 
     return (
-        <div className='flex flex-col'>
+        <div className='flex flex-col box-border'>
 
             <div className='flex flex-row'>
                     <div className='flex flex-col pb-5 mr-3'>
                         <label className='text-xs font-medium'>First Name</label>
                         <input
-                            className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5'
+                            className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5 box-border'
                             type='text'
                             placeholder='Placeholder'
                             value={formData.firstName}
@@ -20,7 +20,7 @@ const UserDetails = ({formData, setFormData}) => {
                     <div className='flex flex-col'>
                         <label className='text-xs font-medium'>Last Name</label>
                         <input
-                            className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5'
+                            className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5 box-border'
                             type='text'
                             placeholder='Placeholder'
                             value={formData.lastName}
@@ -31,7 +31,7 @@ const UserDetails = ({formData, setFormData}) => {
             <div className='flex flex-col pb-5'>
                 <label className='text-xs font-medium'>Username*</label>
                 <input
-                    className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5'
+                    className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5 box-border'
                     type='text'
                     placeholder='Username'
                     value={formData.username}
@@ -41,7 +41,7 @@ const UserDetails = ({formData, setFormData}) => {
             <div className='flex flex-col pb-5'>
                 <label className='text-xs font-medium'>Email Address*</label>
                 <input
-                    className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5'
+                    className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5 box-border'
                     type='text'
                     placeholder='Email Address'
                     value={formData.emailAddress}
@@ -54,7 +54,7 @@ const UserDetails = ({formData, setFormData}) => {
 
                     <label className='text-xs font-medium'>Password*</label>
                     <input
-                        className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5'
+                        className='bg-gray-200 text-gray-900 text-sm block w-full p-2.5 box-border'
                         type='password'
                         placeholder='Password'
                         value={formData.password}
@@ -65,7 +65,7 @@ const UserDetails = ({formData, setFormData}) => {
                 <div className='flex flex-col'>
                     <label className='text-xs font-medium ml-3'>Confirm Password*</label>
                     <input
-                        className='bg-gray-200 ml-3 text-gray-900 text-sm block w-full p-2.5'
+                        className='bg-gray-200 ml-3 text-gray-900 text-sm block w-full p-2.5 box-border'
                         type='password'
                         placeholder='Confirm Password'
                         value={formData.confirmPassword}

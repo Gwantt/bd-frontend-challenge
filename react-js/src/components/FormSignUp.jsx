@@ -106,10 +106,10 @@ const FormSignUp = () => {
             {errors.length > 0 && errors.map((error, idx) => (
                 <div key={idx} className='font-medium text-red-500'>{error}</div>
             )) }
-            <div className="form flex flex-col w-auto bg-white">
+            <div className="form flex flex-col w-auto bg-white box-border">
                 <div className="progressbar"></div>
                 <div className="container flex flex-col">
-                    <div className="body">{pageDisplay()}</div>
+                    <div className="body w-90">{pageDisplay()}</div>
                     <div className="footer">
                         {step >= 1 && (
                             <button
@@ -119,7 +119,7 @@ const FormSignUp = () => {
                                 }}
                                 disabled={step === 0}
                             >
-                                Prev
+                                ← Back
                             </button>
                         )}
                         {step < 2 ? (
@@ -130,7 +130,7 @@ const FormSignUp = () => {
                                 }}
                                 disabled={errors.length}
                             >
-                                Next
+                                Next →
                             </button>
                         ) : (
                             <button className='btn bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 rounded' disabled={errors.length} onClick={() => {
