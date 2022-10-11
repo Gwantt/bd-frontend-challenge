@@ -36,21 +36,21 @@
           </div>
           <div class="form-group">
             <label for="username">Username *</label>
-            <input type="text" name='username'  placeholder="Placeholder">
+            <input type="text" name='username' required placeholder="Placeholder">
           </div>
           <div class="form-group">
             <label for='email'>Email Address *</label>
-            <input type="text" name="email"  placeholder="Placeholder">
+            <input type="text" name="email" required placeholder="Placeholder">
           </div>
           <div class="form-group">
             <div>
               <div class="form-group">
                 <label for="password">Password *</label>
-                <input type="password"  name="password" placeholder="placeholder">
+                <input type="password"  required id='password' name="password" placeholder="placeholder">
               </div>
               <div class="form-group">
                 <label for="confirm">Confirm Password *</label>
-                <input type="password" name="confirm"  placeholder="placeholder">
+                <input type="password" required id='confirm' name="confirmPassword"  placeholder="placeholder">
               </div>
             </div>
           </div>
@@ -62,7 +62,7 @@
             <div>
               <div class="form-group">
                 <label for="address">Address *</label>
-                <input type="text" name="address"  placeholder="placeholder">
+                <input type="text" name="address" required placeholder="placeholder">
               </div>
               <div class="form-group">
                 <label for="apt">Apartment, Suite, etc.</label>
@@ -74,7 +74,7 @@
             <div>
               <div class="form-group">
                 <label for="country">Country *</label>
-                <select id="country" name="country" class="form-control" >
+                <select id="country" name="country" required class="form-control" >
                   <option selected disabled>Dropdown</option>
                   <option value="Afghanistan">Afghanistan</option>
                   <option value="Åland Islands">Åland Islands</option>
@@ -326,11 +326,11 @@
               </div>
               <div class="form-group">
                 <label for="city">City *</label>
-                <input type="password" name="city" placeholder="placeholder">
+                <input type="password" name="city" required placeholder="placeholder">
               </div>
               <div class="form-group">
                 <label for="city">Zipcode *</label>
-                <input type="password" name="city" placeholder="placeholder">
+                <input type="password" name="city" required placeholder="placeholder">
               </div>
             </div>
           </div>
@@ -349,19 +349,19 @@
           <h2 class="title">Preferences</h2>
           <div class="form-group">
             <div>
-                <input type="checkbox">
+                <input name='sendNotification' type="checkbox">
                 <label>Send Notications</label>
             </div>
           </div>
           <div class="form-group">
             <div>
-                <input type="checkbox">
+                <input name='shareInfo' type="checkbox">
                 <label>Share information with related marketer</label>
             </div>
           </div>
           <div class="form-group">
             <label for="pref">Notifcation Preference</label>
-            <select >
+            <select name="NoticationPref">
               <option selected disabled value="">Dropdown: Email or Text</option>
               <option value="email">Email</option>
               <option value="text">Text</option>
@@ -369,7 +369,7 @@
             </select>
           </div>
           <button type="button" data-back>← Back</button>
-          <button type="submit" data-next>Submit</button>
+          <button type="button" id = 'submit-button' data-submit>Submit</button>
         </div>
       </form>
 

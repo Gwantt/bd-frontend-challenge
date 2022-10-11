@@ -1,5 +1,18 @@
 const form = document.querySelector("[data-multi-step]")
 const steps = [...document.querySelectorAll("[data-step]")]
+const password = document.getElementById('password')
+const confirm = document.getElementById('confirm')
+
+const checkPassword = () => {
+  if(password.value !== confirm.value) {
+    alert('please check passwords')
+    return false
+  } else if (password.value === '' && confirm.value === '') {
+    alert('please enter a password')
+    return false
+  }
+  return true;
+}
 
 let currStep = steps.findIndex(step => {
   return step.classList.contains('active')
@@ -12,7 +25,6 @@ if (currStep < 0) {
 }
 
 form.addEventListener('click', e => {
-  console.log('clicked')
   let addend;
   if(e.target.matches('[data-next]')) {
     addend = 1
@@ -23,8 +35,12 @@ form.addEventListener('click', e => {
   }
 
   if(addend === null) return;
+
   // if not required steps complete stop from going to next
   const inputs = [...steps[currStep].querySelectorAll('input')]
+  if(!checkPassword()) {
+    return;
+  }
   const valid = inputs.every(input => input.reportValidity())
 
   if(valid) {
@@ -38,3 +54,21 @@ const showCurrentStep = () => {
     step.classList.toggle('active', idx === currStep)
   })
 }
+
+const submit = document.querySelector('[data-submit]')
+const inputs = form.querySelectorAll('input')
+const selects = form.querySelectorAll('select')
+const formData = {}
+
+submit.addEventListener('click', e => {
+  inputs.forEach(input => {
+    formData[input.name] = input.value
+  })
+
+  selects.forEach(select => {
+    formData[select.name] = select.value
+  })
+
+  console.log(JSON.stringify(formData))
+
+})
