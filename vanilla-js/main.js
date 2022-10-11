@@ -12,11 +12,14 @@ if (currStep < 0) {
 }
 
 form.addEventListener('click', e => {
+  console.log('clicked')
   let addend;
   if(e.target.matches('[data-next]')) {
     addend = 1
   } else if (e.target.matches('[data-back]')) {
     addend = -1
+  } else {
+    return
   }
 
   if(addend === null) return;
