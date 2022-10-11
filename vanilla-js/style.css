@@ -40,7 +40,10 @@ a {
 
 .form-group > input {
   padding: .25rem;
+}
 
+.form-group > select {
+  padding: .25rem;
 }
 
 .step {
