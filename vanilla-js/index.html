@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/svg+xml" href="/bryt.svg" />
   <link type="text/css" rel="stylesheet" href="/all.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,8 +19,8 @@
   <main id="app">
     <!-- Please feel free to remove this boilerplate code! -->
     <div class="container-sm h-100">
-      <form class="form">
-        <div data-step="1" class="step">
+      <form class="form" data-multi-step>
+        <div data-step="1" class="step active">
           <h2 class="title">Account </h2>
           <div class="form-group">
             <div>
@@ -53,7 +54,7 @@
               </div>
             </div>
           </div>
-          <button type="button">Next →</button>
+          <button type="button" data-next>Next →</button>
         </div>
         <div data-step="2" class="step">
           <h2 class="title">Address</h2>
@@ -341,8 +342,8 @@
             <label for='phone'>Phone Number</label>
             <input type="tel" name="phone" placeholder="Placeholder">
           </div>
-          <button type="button">← Back</button>
-          <button type="button">Next →</button>
+          <button type="button" data-back>← Back</button>
+          <button type="button" data-next>Next →</button>
         </div>
         <div data-step="3" class="step">
           <h2 class="title">Preferences</h2>
@@ -367,8 +368,8 @@
 
             </select>
           </div>
-          <button type="button">← Back</button>
-          <button type="submit">Submit</button>
+          <button type="button" data-back>← Back</button>
+          <button type="submit" data-next>Submit</button>
         </div>
       </form>
 
@@ -376,7 +377,7 @@
     </div>
     <!-- Please feel free to remove this boilerplate code! -->
   </main>
-  <script type="module" src="/main.js"></script>
+  <script type="module" src="./main.js"></script>
 </body>
 
 </html>

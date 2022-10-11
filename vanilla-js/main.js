@@ -1,37 +1,29 @@
-import './style.css';
-import $ from 'jquery';
+const form = document.querySelector("[data-multi-step]")
+const steps = [...document.querySelectorAll("[data-step]")]
 
-// Please feel free to remove everything below this line 😄
-const inputs = $('input')
+let currStep = steps.findIndex(step => {
+  return step.classList.contains('active')
+})
 
-// Starter data;
-const data = {
-  name: "World"
+
+if (currStep < 0) {
+  currStep = 0
+  showCurrentStep()
 }
 
-// updates reactive elements text content;
-const reactiveData = new Proxy(data, {
-  set(target, prop, value) {
-    if (target[prop] === value) return target[prop];
-    $(`[data-reactive="${prop}"]`).text(value);
-    return true;
+form.addEventListener('click', e => {
+  if(e.target.matches('[data-next]')) {
+    currStep++
+  } else if (e.target.matches('[data-back]')) {
+    currStep--
   }
+  showCurrentStep()
 })
 
-// updates reactive elems on input
-inputs.on('input', function () {
-  const name = $(this).prop("name");
-  const value = $(this).val();
-  reactiveData[name] = value;
-})
-
-// populates input elements with proper data;
-$(function () {
-  const reactiveElems = $('[data-reactive]');
-  reactiveElems.each(function (index, elem) {
-    const name = $(elem).data('reactive')
-    const value = data[name];
-    $(elem).text(value);
-    $(`[name=${name}]`).val(value)
+const showCurrentStep = () => {
+  steps.forEach((step, idx) => {
+    step.classList.toggle('active', idx === currStep)
   })
-})
+}
+
+console.log(currStep)
