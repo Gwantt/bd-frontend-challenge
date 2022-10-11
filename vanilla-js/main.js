@@ -12,12 +12,22 @@ if (currStep < 0) {
 }
 
 form.addEventListener('click', e => {
+  let addend;
   if(e.target.matches('[data-next]')) {
-    currStep++
+    addend = 1
   } else if (e.target.matches('[data-back]')) {
-    currStep--
+    addend = -1
   }
-  showCurrentStep()
+
+  if(addend === null) return;
+  // if not required steps complete stop from going to next
+  const inputs = [...steps[currStep].querySelectorAll('input')]
+  const valid = inputs.every(input => input.reportValidity())
+
+  if(valid) {
+    currStep += addend
+    showCurrentStep()
+  }
 })
 
 const showCurrentStep = () => {
@@ -25,5 +35,3 @@ const showCurrentStep = () => {
     step.classList.toggle('active', idx === currStep)
   })
 }
-
-console.log(currStep)
