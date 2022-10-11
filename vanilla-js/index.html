@@ -18,23 +18,86 @@
   <main id="app">
     <!-- Please feel free to remove this boilerplate code! -->
     <div class="container-sm h-100">
-      <div class="row h-100 align-items-center justify-content-center">
-        <div class="col-12 text-center">
-          <h1>Hello <span data-reactive="name"></span> and good luck 😄!</h1>
-          <h3>For this one, please stick to using Javascript, JQuery, HTML, CSS and Bootstrap, please don't use
-            any other dependencies! 💃</h3>
-          <p>
-            This template also has font awesome icon library installed as well. Feel
-            free to use these icons
-            <a href="https://fontawesome.com/search?m=free&s=solid%2Cbrands%2Cregular" target="_blank">
-              Font Awesome
-              <i class="fa-regular fa-font-awesome"></i>
-            </a>
-            or whatever icon library you want to use :3
-          </p>
-          <input class="form-control form-control-lg" type="text" name="name" placeholder="name" value="" />
+      <form class="form">
+        <div data-step="1" class="step">
+          <h2 class="title">Account </h2>
+          <div class="form-group">
+            <div>
+              <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" placeholder="placeholder">
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" placeholder="placeholder">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="username">Username *</label>
+            <input type="text" name='username' placeholder="Placeholder">
+          </div>
+          <div class="form-group">
+            <label for='email'>Email Address</label>
+            <input type="text" name="email" placeholder="Placeholder">
+          </div>
+          <div class="form-group">
+            <div>
+              <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" name="password" placeholder="placeholder">
+              </div>
+              <div class="form-group">
+                <label for="confirm">Confirm Password</label>
+                <input type="password" name="confirm" placeholder="placeholder">
+              </div>
+            </div>
+          </div>
+          <button type="button">Next →</button>
         </div>
-      </div>
+        <div data-step="2" class="step">
+          <h2 class="title">Account </h2>
+          <div class="form-group">
+            <div>
+              <div class="form-group">
+                <label for="firstname">First Name</label>
+                <input type="text" name="firstname" placeholder="placeholder">
+              </div>
+              <div class="form-group">
+                <label for="lastname">Last Name</label>
+                <input type="text" name="lastname" placeholder="placeholder">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="username">Username *</label>
+            <input type="text" name='username' placeholder="Placeholder">
+          </div>
+          <div class="form-group">
+            <label for='email'>Email Address</label>
+            <input type="text" name="email" placeholder="Placeholder">
+          </div>
+          <div class="form-group">
+            <div>
+              <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" name="password" placeholder="placeholder">
+              </div>
+              <div class="form-group">
+                <label for="confirm">Confirm Password</label>
+                <input type="password" name="confirm" placeholder="placeholder">
+              </div>
+            </div>
+          </div>
+          <button type="button">← Back</button>
+          <button type="button">Next →</button>
+        </div>
+        <div data-step="3" class="step">
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+
+
     </div>
     <!-- Please feel free to remove this boilerplate code! -->
   </main>
